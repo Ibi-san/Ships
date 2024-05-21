@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuCharacter : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class MenuCharacter : MonoBehaviour
     [SerializeField] private GameObject _corsair;
     [SerializeField] private TMP_Dropdown _piratsClans;
     [SerializeField] private TMP_Dropdown _corsairsClans;
+    [SerializeField] private TMP_InputField _login;
 
     [SerializeField] private SkinnedMeshRenderer _pirateModel;
     [SerializeField] private SkinnedMeshRenderer _corsairModel;
@@ -62,5 +64,24 @@ public class MenuCharacter : MonoBehaviour
             _corsairModel.material = _corsairsClans.value == 0 ? _british : _spanish;
             ClanChanged?.Invoke(_fraction.value, _corsairsClans.value);
         }
+    }
+
+    public void StartGame()
+    {
+        if (string.IsNullOrEmpty(_login.text)) return;
+        
+        PlayerSettings.Instance.SetLogin(_login.text);
+
+        Fraction fraction = _fraction.value == 0 ? Fraction.Pirate : Fraction.Corsair;
+        PlayerSettings.Instance.SetFraction(fraction);
+
+        Clan clan;
+        if (fraction == Fraction.Pirate)
+            clan = _piratsClans.value == 0 ? Clan.BlackLagoon : Clan.FunnyRoger;
+        else
+            clan = _corsairsClans.value == 0 ? Clan.British : Clan.Spanish;
+        PlayerSettings.Instance.SetClan(clan);
+
+        SceneManager.LoadScene(sceneBuildIndex: 1);
     }
 }
