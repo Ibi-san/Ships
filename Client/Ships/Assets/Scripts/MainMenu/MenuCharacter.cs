@@ -65,13 +65,13 @@ public class MenuCharacter : MonoBehaviour
             ClanChanged?.Invoke(_fraction.value, _corsairsClans.value);
         }
     }
+    
+    public void InputLogin(string login) => PlayerSettings.Instance.SetLogin(login);
 
     public void StartGame()
     {
-        if (string.IsNullOrEmpty(_login.text)) return;
+        if (string.IsNullOrEmpty(PlayerSettings.Instance.Login)) return;
         
-        PlayerSettings.Instance.SetLogin(_login.text);
-
         Fraction fraction = _fraction.value == 0 ? Fraction.Pirate : Fraction.Corsair;
         PlayerSettings.Instance.SetFraction(fraction);
 
