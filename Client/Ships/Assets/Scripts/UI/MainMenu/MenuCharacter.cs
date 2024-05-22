@@ -19,6 +19,8 @@ public class MenuCharacter : MonoBehaviour
     [SerializeField] private Material _british;
     [SerializeField] private Material _spanish;
 
+    [SerializeField] private FadeMenu _fadeMenu;
+
     public Action<int, int> ClanChanged;
     
     private void Start()
@@ -82,6 +84,6 @@ public class MenuCharacter : MonoBehaviour
             clan = _corsairsClans.value == 0 ? Clan.British : Clan.Spanish;
         PlayerSettings.Instance.SetClan(clan);
 
-        SceneManager.LoadScene(sceneBuildIndex: 1);
+        _fadeMenu.LoadGameplay();
     }
 }

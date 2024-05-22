@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Colyseus;
 using UnityEngine;
@@ -71,12 +72,13 @@ public class MultiplayerManager : ColyseusManager<MultiplayerManager>
     #region Enemy
 
     [SerializeField] private Enemy _enemyPrefab;
+    public Action EnemyJoined;
 
     private void CreateEnemy(string key, Player player)
     {
-        print("Enemy created!");
         Enemy enemy = Instantiate(_enemyPrefab, transform.position, Quaternion.identity);
         enemy.Init(player.f, player.c);
+        EnemyJoined?.Invoke();
     }
     
     private void RemoveEnemy(string key, Player value)
