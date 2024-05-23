@@ -27,8 +27,11 @@ public class FadeGame : MonoBehaviour
     {
         StopCoroutine(waitCoroutine);
         _loadingText.DOKill();
-        _loadingText.DOFade(0, _transitionTime / 2).OnComplete(() => 
-            _fadePanel.DOFillAmount(0, _transitionTime));
+        _loadingText.DOFade(0, _transitionTime / 2).OnComplete(() =>
+        {
+            _fadePanel.DOFillAmount(0, _transitionTime);
+            gameObject.SetActive(false);
+        });
     }
 
     private IEnumerator WaitForEnemy()

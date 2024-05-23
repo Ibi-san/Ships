@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2314450}
   - component: {fileID: 8661659970458448022}
   - component: {fileID: 8837853436324302558}
+  - component: {fileID: 6493105528660535744}
   m_Layer: 0
   m_Name: GridCell
   m_TagString: Untagged
@@ -98,9 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de567e8d46954de091dbc15b243091dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _water: {fileID: 2100000, guid: 8c8d801ecd170644980906fad7d5da99, type: 2}
-  _selectedWater: {fileID: 2100000, guid: 9087a684aaad4c04b9d39a08ca99b616, type: 2}
-  _waterMesh: {fileID: 2314450}
+  _outline: {fileID: 6493105528660535744}
 --- !u!65 &8837853436324302558
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -122,6 +121,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 30, y: 0.43344823, z: 30.000004}
   m_Center: {x: -14.995285, y: 0.19393556, z: 15.126102}
+--- !u!114 &6493105528660535744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 0
+  eraseRenderer: 1
 --- !u!1 &6578340842187682760
 GameObject:
   m_ObjectHideFlags: 0

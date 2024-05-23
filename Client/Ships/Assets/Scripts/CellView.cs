@@ -1,23 +1,21 @@
 using System;
+using cakeslice;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class CellView : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public Action<CellView> Clicked;
-    [SerializeField] private Material _water;
-    [SerializeField] private Material _selectedWater;
-
-    [SerializeField] private MeshRenderer _waterMesh;
+    [SerializeField] private Outline _outline;
     
     public void OnPointerEnter(PointerEventData eventData)
     {
-        _waterMesh.material = _selectedWater;
+        _outline.eraseRenderer = false;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        _waterMesh.material = _water;
+        _outline.eraseRenderer = true;
     }
 
     private void OnMouseDown() => Clicked?.Invoke(this);
