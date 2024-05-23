@@ -2,11 +2,26 @@
 
 public class Enemy : MonoBehaviour
 {
+    public static Enemy Instance { get; private set; }
+    public string Login { get; private set; }
     public Fraction Fraction { get; private set; }
     public Clan Clan { get; private set; }
-
-    public void Init(int fraction, int clan)
+    
+    private void Awake()
     {
+        if (Instance)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    public void Init(int fraction, int clan, string login)
+    {
+        Login = login;
         Fraction = (Fraction)fraction;
         Clan = (Clan)clan;
     }

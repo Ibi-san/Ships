@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4497767, g: 0.49984407, b: 0.57561326, a: 1}
+  m_IndirectSpecularColor: {r: 0.17046393, g: 0.2138969, b: 0.2908209, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1766,8 +1766,8 @@ Transform:
   m_LocalScale: {x: 0.39999998, y: 0.39999998, z: 0.39999998}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6798643558083944992}
   - {fileID: 5408152786684312042}
+  - {fileID: 6798643558083944992}
   - {fileID: 6775076336830305325}
   - {fileID: 7580307794147807232}
   m_Father: {fileID: 0}
@@ -1784,8 +1784,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 651ee8aeadd19c1448e1fb42d97c80ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _blackLagoonFlag: {fileID: 6798643558083708964}
-  _funnyRogerFlag: {fileID: 5408152786684552454}
+  _blackLagoonFlag: {fileID: 5408152786684552454}
+  _funnyRogerFlag: {fileID: 6798643558083708964}
   _britishFlag: {fileID: 6775076336830024249}
   _spanishFlag: {fileID: 7580307794147554178}
   _menuCharacter: {fileID: 1416561571}
@@ -12114,7 +12114,7 @@ GameObject:
   - component: {fileID: 5408152786685578550}
   - component: {fileID: 5408152786686268020}
   m_Layer: 0
-  m_Name: Pirate_FunnyRoger
+  m_Name: Pirate_BlackLagoon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12265,7 +12265,7 @@ GameObject:
   - component: {fileID: 6798643558084691688}
   - component: {fileID: 6798643558085891584}
   m_Layer: 0
-  m_Name: Pirate_BlackLagoon
+  m_Name: Pirate_FunnyRoger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

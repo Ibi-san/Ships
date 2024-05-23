@@ -77,7 +77,7 @@ public class MultiplayerManager : ColyseusManager<MultiplayerManager>
     private void CreateEnemy(string key, Player player)
     {
         Enemy enemy = Instantiate(_enemyPrefab, transform.position, Quaternion.identity);
-        enemy.Init(player.f, player.c);
+        enemy.Init(player.f, player.c, player.l);
         EnemyJoined?.Invoke();
     }
     

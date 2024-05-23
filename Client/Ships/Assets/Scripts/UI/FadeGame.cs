@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -14,6 +12,7 @@ public class FadeGame : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _loadingText;
     [SerializeField] private string[] _waitTexts = { "Ожидание оппонента...", "Ожидание оппонента.", "Ожидание оппонента.." };
 
+    [SerializeField] private Score _score;
     private Coroutine waitCoroutine; 
 
     private void Start()
@@ -32,6 +31,14 @@ public class FadeGame : MonoBehaviour
             _fadePanel.DOFillAmount(0, _transitionTime);
             gameObject.SetActive(false);
         });
+        InitScore();
+    }
+
+    private void InitScore()
+    {
+        var player = PlayerSettings.Instance;
+        var enemy = Enemy.Instance;
+        _score.Init(player.Login, enemy.Login, player.Clan, enemy.Clan);
     }
 
     private IEnumerator WaitForEnemy()
