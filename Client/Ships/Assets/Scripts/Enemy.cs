@@ -3,6 +3,8 @@
 public class Enemy : MonoBehaviour
 {
     public static Enemy Instance { get; private set; }
+    
+    public PlayerStats EnemyStats;
     public string Login { get; private set; }
     public Fraction Fraction { get; private set; }
     public Clan Clan { get; private set; }

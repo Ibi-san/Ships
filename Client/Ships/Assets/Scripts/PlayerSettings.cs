@@ -4,6 +4,8 @@ public class PlayerSettings : MonoBehaviour
 {
     public static PlayerSettings Instance { get; private set; }
 
+    public PlayerStats PlayerStats;
+
     public string Login { get; private set; }
     
     public Fraction Fraction { get; private set; }

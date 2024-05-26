@@ -5,6 +5,7 @@ using UnityEngine;
 public class Battlefield : MonoBehaviour
 {
     [SerializeField] private bool _isPlayer;
+    private PlayerStats _playerStats;
     private const int GridSize = 10;
     private readonly Cell[,] _grid = new Cell[GridSize, GridSize];
 
@@ -30,6 +31,8 @@ public class Battlefield : MonoBehaviour
         {
             cellView.Clicked += ClickCell;
         }
+
+        _playerStats = _isPlayer ? PlayerSettings.Instance.PlayerStats : Enemy.Instance.EnemyStats;
     }
 
     private void ClickCell(CellView cellView)

@@ -1,11 +1,26 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class PlayerStats : MonoBehaviour
+public class PlayerStats
 {
-    [SerializeField] private int _smallShipsAmount;
-    [SerializeField] private int _mediumShipsAmount;
-    [SerializeField] private int _largeShipsAmount;
-    [SerializeField] private int _flotillaAmount;
+    public int SmallShipsAmount { get; private set; }
+    public int MediumShipsAmount { get; private set; }
+    public int LargeShipsAmount { get; private set; }
+    public int FlotillaAmount { get; private set; }
+
+    private List<Ship> BattleShips = new();
+    private List<Ship> HubShips = new();
+
+    public PlayerStats(int smallShipsAmount, int mediumShipsAmount, int largeShipsAmount, int flotillaAmount)
+    {
+        SmallShipsAmount = smallShipsAmount;
+        MediumShipsAmount = mediumShipsAmount;
+        LargeShipsAmount = largeShipsAmount;
+        FlotillaAmount = flotillaAmount;
+    }
+
+    public void AddShipToBattle(Ship ship) => BattleShips.Add(ship);
+    public void RemoveShip(Ship ship) => BattleShips.Remove(ship);
+    public void ClearBattleShips() => BattleShips.Clear();
+    public void AddShipToHub(Ship ship) => HubShips.Add(ship);
+    
 }
