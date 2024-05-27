@@ -8,12 +8,16 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     public GameState CurrentState { get; private set; }
 
-    private int _currentRound = 0;
+    public int CurrentRound { get; private set; } = 3;
 
     [SerializeField] private Ship _oneCellShip;
     [SerializeField] private Ship _twoCellShip;
     [SerializeField] private Ship _threeCellShip;
     [SerializeField] private Ship _fourCellShip;
+
+    public ShipsHubUI ShipsHubUI;
+
+    private int _shipID = 0;
     
     private void Awake()
     {
@@ -34,8 +38,8 @@ public class GameManager : MonoBehaviour
         switch (state)
         {
             case GameState.StartRound:
-                _currentRound++;
-                PlayerSettings.Instance.PlayerStats = _currentRound switch
+                CurrentRound++;
+                PlayerSettings.Instance.PlayerStats = CurrentRound switch
                 {
                     1 => new PlayerStats(1, 0, 0, 0),
                     2 => new PlayerStats(2, 1, 0, 0),
@@ -48,8 +52,9 @@ public class GameManager : MonoBehaviour
                 InitShips(PlayerSettings.Instance.PlayerStats.MediumShipsAmount, _twoCellShip);
                 InitShips(PlayerSettings.Instance.PlayerStats.LargeShipsAmount, _threeCellShip);
                 InitShips(PlayerSettings.Instance.PlayerStats.FlotillaAmount, _fourCellShip);
-
+                ShipsHubUI.Init();
                 break;
+            
             case GameState.Battle:
                 break;
             case GameState.Victory:
@@ -61,12 +66,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private static void InitShips(int shipAmount, Ship shipStat)
+    private void InitShips(int shipAmount, Ship ship)
     {
         for (int i = 0; i < shipAmount; i++)
         {
-            shipStat.SetID(i);
-            PlayerSettings.Instance.PlayerStats.AddShipToHub(shipStat);
+            ship.SetID(_shipID);
+            _shipID++;
+            PlayerSettings.Instance.PlayerStats.AddShipToHub(ship);
         }
     }
 
