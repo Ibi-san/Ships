@@ -35,20 +35,19 @@ public class GameManager : MonoBehaviour
         {
             case GameState.StartRound:
                 _currentRound++;
-                var playerStats = PlayerSettings.Instance.PlayerStats;
-                playerStats = _currentRound switch
+                PlayerSettings.Instance.PlayerStats = _currentRound switch
                 {
                     1 => new PlayerStats(1, 0, 0, 0),
                     2 => new PlayerStats(2, 1, 0, 0),
                     3 => new PlayerStats(3, 2, 1, 0),
                     4 => new PlayerStats(4, 3, 2, 1),
-                    _ => playerStats
+                    _ => PlayerSettings.Instance.PlayerStats
                 };
                 
-                InitShips(playerStats.SmallShipsAmount, _oneCellShip);
-                InitShips(playerStats.MediumShipsAmount, _twoCellShip);
-                InitShips(playerStats.LargeShipsAmount, _threeCellShip);
-                InitShips(playerStats.FlotillaAmount, _fourCellShip);
+                InitShips(PlayerSettings.Instance.PlayerStats.SmallShipsAmount, _oneCellShip);
+                InitShips(PlayerSettings.Instance.PlayerStats.MediumShipsAmount, _twoCellShip);
+                InitShips(PlayerSettings.Instance.PlayerStats.LargeShipsAmount, _threeCellShip);
+                InitShips(PlayerSettings.Instance.PlayerStats.FlotillaAmount, _fourCellShip);
 
                 break;
             case GameState.Battle:
@@ -64,8 +63,11 @@ public class GameManager : MonoBehaviour
 
     private static void InitShips(int shipAmount, Ship shipStat)
     {
-        for (int i = 0; i < shipAmount; i++) 
+        for (int i = 0; i < shipAmount; i++)
+        {
+            shipStat.SetID(i);
             PlayerSettings.Instance.PlayerStats.AddShipToHub(shipStat);
+        }
     }
 
     private void OnDestroy()

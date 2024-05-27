@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1794139, g: 0.22465082, b: 0.3063088, a: 1}
+  m_IndirectSpecularColor: {r: 0.17941378, g: 0.22465053, b: 0.30630845, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -14992,7 +14992,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &329818946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30825,7 +30825,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000061035156}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &675935057
@@ -43870,7 +43870,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981789212}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e2c53bd2b9c430b947828fc63c8d899, type: 3}
   m_Name: 
@@ -54009,7 +54009,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1388349290}
   m_HandleRect: {fileID: 1388349288}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -59467,6 +59467,54 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 476920, guid: a2fdfebba1c706e41b0fa8a819b914e9, type: 3}
   m_PrefabInstance: {fileID: 1362983797}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1367682421
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1367682423}
+  - component: {fileID: 1367682422}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1367682422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367682421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d94a44b3274420b4886e21ad3dae2275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _oneCellShip: {fileID: 11400000, guid: 6ef93253fe5844c4590ae60b99ac846b, type: 2}
+  _twoCellShip: {fileID: 11400000, guid: a83dd5f17b67bb64e8285a7ad242544b, type: 2}
+  _threeCellShip: {fileID: 11400000, guid: 3fd090f7dbb97304495d845e370ea960, type: 2}
+  _fourCellShip: {fileID: 11400000, guid: 6cc57b4cb1245b74faaa368e3b174435, type: 2}
+--- !u!4 &1367682423
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367682421}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1368713318
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64115,7 +64163,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1460117793}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e2c53bd2b9c430b947828fc63c8d899, type: 3}
   m_Name: 
@@ -66588,7 +66636,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 172755147}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99705875
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -69477,7 +69525,7 @@ MonoBehaviour:
   - "\u041E\u0436\u0438\u0434\u0430\u043D\u0438\u0435 \u043E\u043F\u043F\u043E\u043D\u0435\u043D\u0442\u0430."
   - "\u041E\u0436\u0438\u0434\u0430\u043D\u0438\u0435 \u043E\u043F\u043F\u043E\u043D\u0435\u043D\u0442\u0430.."
   - "\u041E\u0436\u0438\u0434\u0430\u043D\u0438\u0435 \u043E\u043F\u043F\u043E\u043D\u0435\u043D\u0442\u0430..."
-  _score: {fileID: 0}
+  _score: {fileID: 480246025}
 --- !u!1001 &1584616795
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -96450,6 +96498,7 @@ SceneRoots:
   - {fileID: 281791050}
   - {fileID: 1480619079}
   - {fileID: 1592545762}
+  - {fileID: 1367682423}
   - {fileID: 1861343896}
   - {fileID: 1658152153}
   - {fileID: 114260240}

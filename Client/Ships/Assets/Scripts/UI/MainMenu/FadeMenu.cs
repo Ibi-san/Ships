@@ -9,10 +9,7 @@ public class FadeMenu : MonoBehaviour
 {
     [SerializeField] private Image _fadePanel;
     [SerializeField] private float _transitionTime;
-    public void LoadGameplay()
-    {
-        GameManager.Instance.UpdateState(GameState.StartRound);
+    public void LoadGameplay() =>
         _fadePanel.DOFillAmount(1, _transitionTime).SetEase(Ease.OutCubic).OnComplete(() =>
             SceneManager.LoadScene(sceneBuildIndex: 1));
-    }
 }

@@ -7,6 +7,8 @@ public class Ship : ScriptableObject
     [field: SerializeField] public int Speed { get; private set; }
     [field: SerializeField] public int Damage { get; private set; }
     [field: SerializeField] public int MaxHealth { get; private set; }
+    
+    public int ID { get; private set; }
 
     public Ship(int size, int speed, int damage, int maxHealth)
     {
@@ -15,4 +17,6 @@ public class Ship : ScriptableObject
         Damage = damage;
         MaxHealth = maxHealth;
     }
+
+    public void SetID(int id) => ID = id;
 }

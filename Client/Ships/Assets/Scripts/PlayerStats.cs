@@ -8,7 +8,7 @@ public class PlayerStats
     public int FlotillaAmount { get; private set; }
 
     private List<Ship> BattleShips = new();
-    private List<Ship> HubShips = new();
+    public List<Ship> HubShips = new();
 
     public PlayerStats(int smallShipsAmount, int mediumShipsAmount, int largeShipsAmount, int flotillaAmount)
     {

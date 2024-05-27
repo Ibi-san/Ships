@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Linq;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -31,6 +32,7 @@ public class FadeGame : MonoBehaviour
             _fadePanel.DOFillAmount(0, _transitionTime);
             gameObject.SetActive(false);
         });
+        GameManager.Instance.UpdateState(GameState.StartRound);
         InitScore();
     }
 
